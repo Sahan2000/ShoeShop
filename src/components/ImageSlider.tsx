@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Button from "./Button.tsx";
 
 const ImageSlider = ({images, interval = 3000}:any) => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -12,7 +13,7 @@ const ImageSlider = ({images, interval = 3000}:any) => {
     }, [images.length, interval]);
 
     return (
-        <div className="relative overflow-hidden w-full h-[400px] max-w-xs mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg">
+        <div className="relative overflow-hidden w-full h-[500px] max-w-xs mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg">
             <div
                 className="flex transition-transform ease-in-out duration-500"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -22,16 +23,14 @@ const ImageSlider = ({images, interval = 3000}:any) => {
                         key={index}
                         src={`${image.image}`}
                         alt={`Slide ${index}`}
-                        className="w-full h-[400px] object-cover sm:h-72 md:h-80 lg:h-96"
+                        className="w-full h-[500px] object-cover sm:h-72 md:h-80 lg:h-96"
                     />
                 ))}
             </div>
 
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white">
-                <h1 className="text-3xl font-bold sm:text-4xl">Shoes That Define You</h1>
-                <button className="mt-4 bg-yellow-500 text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-600">
-                    Shop Now
-                </button>
+                <h1 className="text-[50px] mt-28 font-jost font-extrabold sm:text-4xl">Shoes That Define You</h1>
+                <Button name="Shop Now"/>
             </div>
 
             <div className="absolute bottom-2 w-full flex justify-center space-x-2">

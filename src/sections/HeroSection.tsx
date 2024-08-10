@@ -1,4 +1,4 @@
-import ImageSlider from "./ImageSlider.tsx";
+import ImageSlider from "../components/ImageSlider.tsx";
 
 export default function HeroSection() {
     const imageData = [
