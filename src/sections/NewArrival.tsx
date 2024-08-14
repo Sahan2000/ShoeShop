@@ -98,7 +98,7 @@ export default function NewArrival(){
                     {/* Left Arrow */}
                     <button
                         onClick={scrollLeft}
-                        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full shadow-md hover:bg-gray-300 focus:outline-none">
+                        className="absolute left-20 top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full shadow-md hover:bg-gray-300 focus:outline-none">
                         <FaChevronLeft className="text-gray-600"/>
                     </button>
 
@@ -118,7 +118,7 @@ export default function NewArrival(){
                     {/* Right Arrow */}
                     <button
                         onClick={scrollRight}
-                        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full shadow-md hover:bg-gray-300 focus:outline-none">
+                        className="absolute right-20 top-1/2 transform -translate-y-1/2 bg-gray-200 p-2 rounded-full shadow-md hover:bg-gray-300 focus:outline-none">
                         <FaChevronRight className="text-gray-600"/>
                     </button>
                 </div>
