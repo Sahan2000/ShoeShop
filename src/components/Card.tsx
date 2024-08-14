@@ -1,8 +1,9 @@
+import { FaShoppingCart, FaHeart, FaSearch } from 'react-icons/fa';
 export default function Card({ image, name, originalPrice, salePrice, /*installmentPrice*/ }:any) {
     return (
         <div className="flex-none w-64 m-2 p-4 bg-white rounded-lg shadow-md">
             <div className="relative">
-                <img src={image} alt={name} className="w-full h-48 object-cover rounded-lg"/>
+                <img src={image} alt={name} className="w-full h-48 object-cover rounded-lg" />
                 {salePrice && (
                     <span className="absolute top-2 left-2 bg-black text-white text-xs px-2 py-1 rounded">SALE!</span>
                 )}
@@ -18,6 +19,12 @@ export default function Card({ image, name, originalPrice, salePrice, /*installm
                     <span className="text-blue-600 font-bold"> mintpay</span>
                 </div>
             )}*/}
+            {/* Icons Section */}
+            <div className="flex justify-around mt-4 text-gray-600">
+                <FaShoppingCart className="w-5 h-5 cursor-pointer hover:text-black" />
+                <FaHeart className="w-5 h-5 cursor-pointer hover:text-red-500" />
+                <FaSearch className="w-5 h-5 cursor-pointer hover:text-black" />
+            </div>
         </div>
     );
 }
