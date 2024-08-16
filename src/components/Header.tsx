@@ -33,13 +33,13 @@ export default function Header() {
 
                 {/* Navigation (Hidden on small screens) */}
                 <nav className="hidden xl:flex space-x-8 uppercase text-base">
-                    <a href="#" className="hover:underline">Home</a>
-                    <a href="#" className="hover:underline">Shop</a>
-                    <a href="#" className="hover:underline">Women</a>
-                    <a href="#" className="hover:underline">Men</a>
-                    <a href="#" className="hover:underline">Kids</a>
-                    <a href="#" className="hover:underline">Sale</a>
-                    <a href="#" className="hover:underline">Contact</a>
+                    <a href="#" className="hover:border-b-2 border-white">Home</a>
+                    <a href="#" className="hover:border-b-2 border-white">Shop</a>
+                    <a href="#" className="hover:border-b-2 border-white">Women</a>
+                    <a href="#" className="hover:border-b-2 border-white">Men</a>
+                    <a href="#" className="hover:border-b-2 border-white">Kids</a>
+                    <a href="#" className="hover:border-b-2 border-white">Sale</a>
+                    <a href="#" className="hover:border-b-2 border-white">Contact</a>
                 </nav>
 
                 {/* Icons and Search Bar (Hidden on small screens) */}
