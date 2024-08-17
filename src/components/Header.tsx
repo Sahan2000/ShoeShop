@@ -33,13 +33,13 @@ export default function Header() {
 
                 {/* Navigation (Hidden on small screens) */}
                 <nav className="hidden xl:flex space-x-8 uppercase text-base">
-                    <a href="#" className="hover:border-b-2 border-white">Home</a>
-                    <a href="#" className="hover:border-b-2 border-white">Shop</a>
-                    <a href="#" className="hover:border-b-2 border-white">Women</a>
-                    <a href="#" className="hover:border-b-2 border-white">Men</a>
-                    <a href="#" className="hover:border-b-2 border-white">Kids</a>
-                    <a href="#" className="hover:border-b-2 border-white">Sale</a>
-                    <a href="#" className="hover:border-b-2 border-white">Contact</a>
+                    <a href="/" className="hover:border-b-2 border-white">Home</a>
+                    <a href="/shop" className="hover:border-b-2 border-white">Shop</a>
+                    <a href="/women" className="hover:border-b-2 border-white">Women</a>
+                    <a href="/men" className="hover:border-b-2 border-white">Men</a>
+                    <a href="/kids" className="hover:border-b-2 border-white">Kids</a>
+                    <a href="/sale" className="hover:border-b-2 border-white">Sale</a>
+                    <a href="/contact" className="hover:border-b-2 border-white">Contact</a>
                 </nav>
 
                 {/* Icons and Search Bar (Hidden on small screens) */}
@@ -58,13 +58,13 @@ export default function Header() {
             {/* Mobile Menu (Visible on small screens when opened) */}
             {isMenuOpen && (
                 <nav className="xl:hidden bg-black w-full flex flex-col items-center space-y-4 py-6">
-                    <a href="#" className="text-lg uppercase hover:underline">Home</a>
-                    <a href="#" className="text-lg uppercase hover:underline">Shop</a>
-                    <a href="#" className="text-lg uppercase hover:underline">Women</a>
-                    <a href="#" className="text-lg uppercase hover:underline">Men</a>
-                    <a href="#" className="text-lg uppercase hover:underline">Kids</a>
-                    <a href="#" className="text-lg uppercase hover:underline">Sale</a>
-                    <a href="#" className="text-lg uppercase hover:underline">Contact</a>
+                    <a href="/" className="text-lg uppercase hover:underline">Home</a>
+                    <a href="/shop" className="text-lg uppercase hover:underline">Shop</a>
+                    <a href="/women" className="text-lg uppercase hover:underline">Women</a>
+                    <a href="/men" className="text-lg uppercase hover:underline">Men</a>
+                    <a href="/kids" className="text-lg uppercase hover:underline">Kids</a>
+                    <a href="/sale" className="text-lg uppercase hover:underline">Sale</a>
+                    <a href="/contact" className="text-lg uppercase hover:underline">Contact</a>
                 </nav>
             )}
         </header>

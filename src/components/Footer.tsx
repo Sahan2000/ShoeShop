@@ -3,7 +3,7 @@ import {faFacebook, faInstagram, faTiktok, faTwitter} from "@fortawesome/free-br
 
 export default function Footer(){
     return (
-        <footer className="bg-white py-0 border-t">
+        <footer className="bg-white mt-10 py-0">
             <div className="max-w-screen-lg mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
 
                 <div>
@@ -48,7 +48,7 @@ export default function Footer(){
                         />
                         <button
                             type="submit"
-                            className="bg-yellow-600 text-white px-4 py-2"
+                            className="bg-yellow-600 text-black px-4 py-2"
                         >
                             Submit
                         </button>
@@ -57,7 +57,7 @@ export default function Footer(){
 
             </div>
 
-            <div className="bg-black text-white py-4 m-0">
+            <div className="bg-black text-white mt-10 py-4 m-0">
                 <div
                     className="max-w-screen-lg mx-auto px-4 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
                     <div className="text-center md:text-left">

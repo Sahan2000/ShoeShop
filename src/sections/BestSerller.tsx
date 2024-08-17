@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Card from "../components/Card.tsx";
 
 interface Shoe {
     id: number;
@@ -46,44 +47,42 @@ const BestSellers: React.FC = () => {
     const filteredShoes = shoes.filter(shoe => shoe.category === selectedCategory);
 
     return (
-        <div className="bg-[#F5F5F5] max-w-screen-lg mx-auto p-4">
-            <h2 className="text-2xl font-bold text-center my-8">This Month’s Best Sellers</h2>
-            <div className="flex justify-center mb-8">
-                <ul className="flex space-x-8 text-gray-600">
-                    <li
-                        className={`cursor-pointer ${selectedCategory === 'Men' ? 'border-b-2 border-black' : ''}`}
-                        onClick={() => setSelectedCategory('Men')}
-                    >
-                        Men
-                    </li>
-                    <li
-                        className={`cursor-pointer ${selectedCategory === 'Women' ? 'border-b-2 border-black' : ''}`}
-                        onClick={() => setSelectedCategory('Women')}
-                    >
-                        Women
-                    </li>
-                    <li
-                        className={`cursor-pointer ${selectedCategory === 'Boys' ? 'border-b-2 border-black' : ''}`}
-                        onClick={() => setSelectedCategory('Boys')}
-                    >
-                        Boys
-                    </li>
-                    <li
-                        className={`cursor-pointer ${selectedCategory === 'Girls' ? 'border-b-2 border-black' : ''}`}
-                        onClick={() => setSelectedCategory('Girls')}
-                    >
-                        Girls
-                    </li>
-                </ul>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                {filteredShoes.map(shoe => (
-                    <div key={shoe.id} className="text-center">
-                        <img src={shoe.image} alt={shoe.name} className="w-full h-auto object-cover" />
-                        <h3 className="mt-4 text-lg font-medium">{shoe.name}</h3>
-                        <p className="text-gray-600">{shoe.price}</p>
-                    </div>
-                ))}
+        <div className={"bg-[#F5F5F5] w-full"}>
+            <div className="max-w-screen-lg mx-auto p-4">
+                <h2 className="text-2xl font-bold text-center my-8">This Month’s Best Sellers</h2>
+                <div className="flex justify-center mb-8">
+                    <ul className="flex space-x-8 text-gray-600">
+                        <li
+                            className={`cursor-pointer ${selectedCategory === 'Men' ? 'border-b-2 border-black' : ''}`}
+                            onClick={() => setSelectedCategory('Men')}
+                        >
+                            Men
+                        </li>
+                        <li
+                            className={`cursor-pointer ${selectedCategory === 'Women' ? 'border-b-2 border-black' : ''}`}
+                            onClick={() => setSelectedCategory('Women')}
+                        >
+                            Women
+                        </li>
+                        <li
+                            className={`cursor-pointer ${selectedCategory === 'Boys' ? 'border-b-2 border-black' : ''}`}
+                            onClick={() => setSelectedCategory('Boys')}
+                        >
+                            Boys
+                        </li>
+                        <li
+                            className={`cursor-pointer ${selectedCategory === 'Girls' ? 'border-b-2 border-black' : ''}`}
+                            onClick={() => setSelectedCategory('Girls')}
+                        >
+                            Girls
+                        </li>
+                    </ul>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    {filteredShoes.map(shoe => (
+                        <Card image={shoe.image} name={shoe.name} originalPrice={shoe.price} key={shoe.id} />
+                    ))}
+                </div>
             </div>
         </div>
     );

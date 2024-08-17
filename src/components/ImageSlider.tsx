@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Button from "./Button.tsx";
-import Header from "./Header.tsx";
 
 const ImageSlider = ({imageData, interval = 3000}:any) => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -14,7 +13,6 @@ const ImageSlider = ({imageData, interval = 3000}:any) => {
     }, [imageData.length, interval]);
     return (
         <>
-            <Header/>
             <div className="relative overflow-hidden w-full md:h-[600px] h-[500px] bg-blue-500">
                 <div className="flex transition-transform ease-in-out duration-3000"
                      style={{transform: `translateX(-${currentSlide * 100}%)`, width: `${imageData.length}`}}>

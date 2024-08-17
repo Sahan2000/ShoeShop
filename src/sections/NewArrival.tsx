@@ -1,60 +1,13 @@
 import Card from "../components/Card.tsx";
-import {useEffect, useState} from "react";
+import {Key, useEffect, useState} from "react";
 import {FaChevronLeft, FaChevronRight} from "react-icons/fa";
+import itemDB from "../db/ItemDB.tsx";
 
-export default function NewArrival(){
-    const items = [
-        {
-            id: 1,
-            image: './src/assets/nike1.jpeg',
-            name: 'Nike Men\'s Casual Shoe',
-            originalPrice: 'Rs. 11,990.00',
-        },
-        {
-            id: 2,
-            image: './src/assets/nike2.png',
-            name: 'Nike Men\'s Casual Shoe',
-            originalPrice: 'Rs. 11,990.00',
-        },
-        {
-            id: 3,
-            image: './src/assets/nike3.png',
-            name: 'Nike Men\'s Casual Shoe',
-            originalPrice: 'Rs. 11,990.00',
-        },
-        {
-            id: 4,
-            image: './src/assets/nike4.png',
-            name: 'Nike Men\'s Casual Shoe',
-            originalPrice: 'Rs. 11,990.00',
-        },
-        {
-            id: 5,
-            image: './src/assets/nike4.png',
-            name: 'Nike Men\'s Casual Shoe',
-            originalPrice: 'Rs. 11,990.00',
-        },
-        {
-            id: 6,
-            image: './src/assets/nike4.png',
-            name: 'Nike Men\'s Casual Shoe',
-            originalPrice: 'Rs. 11,990.00',
-        },
-        {
-            id: 7,
-            image: './src/assets/nike4.png',
-            name: 'Nike Men\'s Casual Shoe',
-            originalPrice: 'Rs. 11,990.00',
-        },
-        {
-            id: 8,
-            image: './src/assets/nike4.png',
-            name: 'Nike Men\'s Casual Shoe',
-            originalPrice: 'Rs. 11,990.00',
-        },
-    ];
+export default function NewArrival() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [itemsPerPage, setItemsPerPage] = useState(4);
+
+    const newArrivalItems = itemDB.filter((item: { status: string }) => item.status === "New Arrivals");
 
     const handleResize = () => {
         const width = window.innerWidth;
@@ -84,12 +37,12 @@ export default function NewArrival(){
     };
 
     const scrollRight = () => {
-        if ((currentIndex + 1) * itemsPerPage < items.length) {
+        if ((currentIndex + 1) * itemsPerPage < newArrivalItems.length) {
             setCurrentIndex(currentIndex + 1);
         }
     };
 
-    return(
+    return (
         <>
             <div className="my-8 relative">
                 <h2 className="text-2xl font-bold text-center mb-2">New Arrivals</h2>
@@ -104,12 +57,12 @@ export default function NewArrival(){
 
                     {/* Centering the items */}
                     <div className="flex justify-center overflow-x-hidden scroll-smooth snap-x snap-mandatory">
-                        {items.slice(currentIndex * itemsPerPage, (currentIndex + 1) * itemsPerPage).map((item) => (
+                        {newArrivalItems.slice(currentIndex * itemsPerPage, (currentIndex + 1) * itemsPerPage).map((item: { id: Key | null | undefined; image: string; name: string; price: string; }) => (
                             <div key={item.id} className="snap-center">
                                 <Card
                                     image={item.image}
                                     name={item.name}
-                                    originalPrice={item.originalPrice}
+                                    originalPrice={item.price}
                                 />
                             </div>
                         ))}
@@ -125,7 +78,7 @@ export default function NewArrival(){
 
                 {/* Pagination Dots */}
                 <div className="flex justify-center mt-4">
-                    {Array(Math.ceil(items.length / itemsPerPage)).fill(0).map((_, index) => (
+                    {Array(Math.ceil(newArrivalItems.length / itemsPerPage)).fill(0).map((_, index) => (
                         <div
                             key={index}
                             onClick={() => handleDotClick(index)}
