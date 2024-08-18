@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
 import Button from "./Button.tsx";
+import {useNavigate} from "react-router-dom";
 
 const ImageSlider = ({imageData, interval = 3000}:any) => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         const slideInterval = setInterval(() => {
@@ -27,7 +30,7 @@ const ImageSlider = ({imageData, interval = 3000}:any) => {
                     <h1 className="text-5xl mt-28 font-jost font-extrabold sm:text-4xl lg:text-[50px]">
                         Shoes That Define You
                     </h1>
-                    <Button name="Shop Now" className="mt-4" />
+                    <Button onclick={() => {navigate("/shop")}} name="Shop Now" className="mt-4" />
                 </div>
                 {/* Dots */}
                 <div className="absolute bottom-2 w-full flex justify-center space-x-2">

@@ -23,7 +23,7 @@ export default function KidsPage() {
                 </div>
                 <div className={"flex flex-wrap justify-center mt-10 items-center"}>
                     {kidsShoes.map((item:any) => (
-                            <Card image={item.image} name={item.name} originalPrice={item.price}/>
+                            <Card key={item.id} image={item.image} name={item.name} originalPrice={item.price} id={item.id}/>
                         )
                     )}
                 </div>

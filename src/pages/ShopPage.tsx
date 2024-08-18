@@ -1,12 +1,11 @@
-import {useEffect, useState} from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faSliders} from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSliders } from "@fortawesome/free-solid-svg-icons";
 import Card from "../components/Card.tsx";
 import itemDB from "../db/ItemDB.tsx";
 
 const words = ["Design", "Fashion", "Modern"];
 export default function ShopPage() {
-
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
     useEffect(() => {
@@ -39,13 +38,17 @@ export default function ShopPage() {
             <div className={"bg-[#F5F5F5] py-10"}>
                 <div className={"flex sm:flex-row sm:justify-between sm:px-32 flex-col px-5 opacity-50"}>
                     <h5 className={"font-jost hidden sm:block"}>Showing 1-15 of 65 results</h5>
-                    <h5 className={"font-jost"}>Filter <FontAwesomeIcon icon={faSliders}/></h5>
+                    <h5 className={"font-jost"}>Filter <FontAwesomeIcon icon={faSliders} /></h5>
                 </div>
                 <div className={"flex flex-wrap justify-center mt-10 items-center"}>
-                    {itemDB.map((item:any) => (
-                        <Card image={item.image} name={item.name} originalPrice={item.price}/>
-                        )
-                    )}
+                    {itemDB.map((item: any) => (
+                        <Card
+                            key={item.id} // Use a unique identifier like item.id
+                            image={item.image}
+                            name={item.name}
+                            originalPrice={item.price}
+                         id={item.id}/>
+                    ))}
                 </div>
             </div>
         </>

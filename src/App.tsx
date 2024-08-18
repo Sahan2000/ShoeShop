@@ -8,6 +8,7 @@ import MenPage from "./pages/MenPage.tsx";
 import KidsPage from "./pages/KidsPage.tsx";
 import SalePage from "./pages/SalePage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
+import CartDetails from "./components/CartDetails.tsx";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
             <main className="flex-grow pt-16">
                 <Routes>
                     <Route path="/" element={<HomePage/>}/>
+                    <Route path="/cart" element={<CartDetails />} />
                     <Route path="/shop" element={<ShopPage/>}/>
                     <Route path="/women" element={<WomenPage/>}/>
                     <Route path="/men" element={<MenPage/>}/>

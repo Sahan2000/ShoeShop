@@ -1,9 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBars, faCartShopping, faHeart, faMagnifyingGlass, faTimes} from '@fortawesome/free-solid-svg-icons'
 import {useState} from "react";
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
     return (
         <header className="bg-black text-white w-full fixed z-50">
             <div className="flex justify-between items-center py-4 px-6 md:px-16">
@@ -28,6 +30,7 @@ export default function Header() {
                         icon={faCartShopping}
                         size="2x"
                         className="cursor-pointer"
+                        onClick={() => navigate('/cart')}
                     />
                 </div>
 
@@ -50,7 +53,10 @@ export default function Header() {
                         type="search"
                         placeholder="Search..."
                     />
-                    <FontAwesomeIcon icon={faCartShopping} size="lg"/>
+                    <FontAwesomeIcon icon={faCartShopping} size="lg"
+                                     className="cursor-pointer"
+                                     onClick={() => navigate('/cart')}
+                    />
                     <FontAwesomeIcon icon={faHeart} size="lg"/>
                 </div>
             </div>
